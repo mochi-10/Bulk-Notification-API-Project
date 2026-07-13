@@ -7,7 +7,7 @@ class Sender(models.Model):
     """Model for notification senders"""
     name = models.CharField(max_length=255)
     email = models.EmailField()
-    # Note: No unique=True constraint as per the assignment
+    
     
     class Meta:
         db_table = 'sender'

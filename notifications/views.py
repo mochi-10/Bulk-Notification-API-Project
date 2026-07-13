@@ -15,7 +15,7 @@ class BulkNotificationCreateView(APIView):
     """
     
     def post(self, request, *args, **kwargs):
-        # Step 1: Validate all incoming data using DRF serializer
+        
         serializer = BulkNotificationSerializer(data=request.data)
         
         if not serializer.is_valid():
@@ -46,23 +46,22 @@ class BulkNotificationCreateView(APIView):
                     )
                     notifications_to_create.append(notification)
                 
-                # Step 4: Use Django's bulk_create() for inserting notifications
+                
                 created_notifications = Notification.objects.bulk_create(
                     notifications_to_create
                 )
                 
-                # 🔥 FIX: Fetch the created notifications to get their IDs
-                # Get the IDs of the created notifications
+              
                 notification_ids = [n.id for n in created_notifications]
                 
-                # Fetch the complete objects with IDs
+               
                 created_notifications_with_ids = Notification.objects.filter(
                     id__in=notification_ids
                 )
                 
-                # Step 5: Return success response with IDs
+                
                 notification_serializer = NotificationSerializer(
-                    created_notifications_with_ids,  # These have IDs
+                    created_notifications_with_ids,  
                     many=True
                 )
                 
