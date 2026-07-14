@@ -61,10 +61,12 @@ The API will be available at:
 ### Health Check
 
 - GET `/api/health/`
+- ![image alt](https://github.com/mochi-10/Bulk-Notification-API-Project/blob/4ee6a296dd4b0b181c87770ee6dfff85f8f70f80/Screenshot%202026-07-13%20212526.png)
 
 ### Create Sender and Notifications in Bulk
 
 - POST `/api/notifications/bulk/`
+- ![image alt]()
 
 Example request body:
 
