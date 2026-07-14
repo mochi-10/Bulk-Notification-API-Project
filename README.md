@@ -66,7 +66,7 @@ The API will be available at:
 ### Create Sender and Notifications in Bulk
 
 - POST `/api/notifications/bulk/`
-- ![image alt]()
+- ![image alt](https://github.com/mochi-10/Bulk-Notification-API-Project/blob/1f337c47797bf9db0936f43a983ed17bb9d671a0/Screenshot%202026-07-13%20212548.png)
 
 Example request body:
 
